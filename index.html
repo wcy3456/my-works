@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- 设置中文语言，确保正确显示中文内容 -->
+<html lang="zh-CN">
+<head>
+    <!-- 设置字符编码为UTF-8，支持中文字符 -->
+    <meta charset="UTF-8">
+    <!-- 设置移动设备的视口，实现响应式布局 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食材选择</title>
+    <!-- 引入外部样式表，定义页面的样式 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 主容器，包含所有页面内容 -->
+    <div class="container">
+        <!-- 搜索栏：用于搜索食材 -->
+        <div class="search-bar">
+            <input type="text" placeholder="输入搜索关键词" class="search-input">
+            <button class="search-btn">搜索</button>
+        </div>
+
+        <!-- 分类导航栏：显示不同类别的食材 -->
+        <div class="category-nav">
+            <!-- active类表示当前选中的分类 -->
+            <div class="nav-item active">蔬菜</div>
+            <div class="nav-item">肉类</div>
+            <div class="nav-item">调料</div>
+            <div class="nav-item">主食</div>
+        </div>
+        
+        <!-- 食材展示网格：使用Grid布局展示食材卡片 -->
+        <div class="ingredients-grid">
+            <!-- 食材卡片：每个卡片包含图标和名称 -->
+            <div class="ingredient-card">
+                <div class="ingredient-icon">🥬</div>
+                <div class="ingredient-name">生菜</div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-icon">🥕</div>
+                <div class="ingredient-name">胡萝卜</div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-icon">🥔</div>
+                <div class="ingredient-name">土豆</div>
+            </div>
+        </div>
+        
+        <!-- 已选食材栏：显示用户已选择的食材 -->
+        <div class="selected-bar">
+            <!-- 显示已选食材数量 -->
+            <div class="selected-title">已选食材 (<span class="selected-count">0</span>)</div>
+            <!-- 用于动态添加已选择的食材标签 -->
+            <div class="selected-items"></div>
+            <!-- 确认按钮：点击后根据已选食材生成菜谱 -->
+            <button class="confirm-btn">制作</button>
+        </div>
+    </div>
+    <!-- 先加载食谱数据，因为script.js中的逻辑依赖于recipes.js中的数据 -->
+    <script src="recipes.js"></script>
+    <!-- 加载主要的JavaScript逻辑代码 -->
+    <script src="script.js"></script>
+</body>
+</html>
